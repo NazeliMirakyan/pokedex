@@ -1,0 +1,42 @@
+.wrapper{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 25px;
+    &_title{
+        display: flex;
+        justify-content: center;
+        margin-top: 55px;
+        letter-spacing: 1px;
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: bold;
+       &_id{
+        padding-left: 15px;
+       }
+    }
+        &_container{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 20px 20px;
+        margin-top: 15px;
+        border-radius: 10px;
+        background-color: #fff;
+    
+        &_about{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            color: #000;
+            &_items{
+                &_small_title{
+                    font-size: 25px;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    color: #5CB9FF;
+                }
+               
+            }
+        }
+    }
+}

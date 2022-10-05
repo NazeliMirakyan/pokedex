@@ -1,15 +1,15 @@
 import React from "react";
 
-import Header from "../../components/header/Header";
-import Content from "../../components/content/Content";
-import Filter from "../../components/sort/Filter";
+import Header from "../../components/Header/Header";
+import Content from "../../components/Content/Content";
 
 import style from "./homeContainer.module.scss";
+import LimitFilter from "~/components/LimitFilter/LimitFilter";
 
 const HomeContainer: React.FC = () => (
   <div className={style.wrapper}>
     <Header />
-    <Filter />
+    <LimitFilter />
     <Content />
   </div>
 );

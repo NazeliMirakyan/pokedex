@@ -1,16 +1,14 @@
 import React from "react";
-
 import { useDispatch } from "react-redux";
+
 import { useAppSelector } from "~/hooks";
 import { dataSelectors } from "~/redux";
-
 import { setLimit } from "~/redux/data/slice";
+import { optionNumbers } from "~/constants/limitConstsnt";
 
 import style from "./limit.module.scss";
 
-const optionNumbers = [10, 20, 50];
-
-const limitOptions = optionNumbers.map((numbers, i) => (
+const limitOptions = optionNumbers?.map((numbers, i) => (
   <option key={i} value={numbers} className={style.custom_select_type_option}>
     {numbers}
   </option>
@@ -25,19 +23,21 @@ const LimitFilter: React.FC = () => {
   };
 
   return (
-    <div className={style.custom_select}>
-      <label className={style.custom_select_label} htmlFor="pages">
-        Show per page:
-      </label>
+    <div className={style.wrapper}>
+      <div className={style.wrapper_custom_select}>
+        <label className={style.wrapper_custom_select_label} htmlFor="pages">
+          Show per page:
+        </label>
 
-      <select
-        value={limit}
-        className={style.custom_select_type}
-        name="pages"
-        onChange={handleChange}
-      >
-        {limitOptions}
-      </select>
+        <select
+          value={limit}
+          className={style.wrapper_custom_select_type}
+          name="pages"
+          onChange={handleChange}
+        >
+          {limitOptions}
+        </select>
+      </div>
     </div>
   );
 };

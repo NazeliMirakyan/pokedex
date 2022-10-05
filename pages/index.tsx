@@ -1,6 +1,6 @@
 import React from "react";
 
-import HomeContainer from "~/containers/homeContainer/HomeContainer";
+import HomeContainer from "~/containers/HomeContainer/HomeContainer";
 import PageLayout from "~/PageLayout/PageLayout";
 
 const Home: React.FC = () => {

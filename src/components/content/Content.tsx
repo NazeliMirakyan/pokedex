@@ -1,12 +1,12 @@
 import React from "react";
-import PaginatedItems from "../paginate/ReactPaginate";
+import PaginatedItems from "../Paginate/ReactPaginate";
 
 import { useAppSelector } from "~/hooks";
 import { dataSelectors } from "~/redux";
 
-import style from "./content.module.scss";
-import PokemonItem from "./pokemon/Pokemon";
-import Loader from "./spinner/Loader";
+import style from "./Content.module.scss";
+import PokemonItem from "./Pokemon/PokemonItem";
+import Loader from "./Loader/ReactLoader/Loader";
 
 const Content = () => {
   const pokemons = useAppSelector(dataSelectors.selectPokemons);

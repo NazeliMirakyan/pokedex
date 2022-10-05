@@ -1,4 +1,4 @@
-@import '../../styles/vars.module.scss';
+@import "../../styles/vars.module.scss";
 
 .wrapper {
   width: 100%;
@@ -8,7 +8,7 @@
   padding: 35px 0;
   margin: 15px 0;
   background-color: $white;
-  color:$black;
+  color: $black;
   &_item {
     width: 500px;
     display: flex;
@@ -52,7 +52,7 @@
       }
     }
   }
-  .pagination{
+  .pagination {
     display: flex;
     justify-content: center;
     list-style-type: none;
@@ -60,23 +60,22 @@
     margin-bottom: 15px;
     font-size: 25px;
     gap: 5px;
-    &_page_num{
+    &_page_num {
       padding: 8px 15px;
       cursor: pointer;
       border-radius: 3px;
       font-weight: 400;
-      transition: ease-in .1s;
-      &:hover{
+      transition: ease-in 0.1s;
+      &:hover {
         background-color: $light_blue;
         color: $white;
       }
-      &_active{
+      &_active {
         padding: 8px 0;
         border-radius: 3px;
         background-color: $light_blue;
         color: $white;
       }
     }
-   
   }
 }

@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import axios from "axios";
 
-import Link from "~/helper/PageLinks";
+import Link from "~/components/PageLink/PageLinks";
 import { useAppDispatch } from "~/hooks";
-import { pokemonUrl } from "~/requests/BaseUrl";
-import { convertZero } from "~/helper/ConvertZero";
+import { formatId } from "~/helper/formatId";
 
-import { PokemonItemProps, IDataPokemon } from "../type";
+import { PokemonItemProps, IDataPokemon } from "../types";
 import style from "../content.module.scss";
-import Spinner from "../spinner/Spinner";
+import Spinner from "../Loader/Spiner/Spiner";
+import { fetchPokemonsName } from "~/requests/apiRequests";
 
 const PokemonItem: React.FC<PokemonItemProps> = ({ pokemon }) => {
   const dispatch = useAppDispatch();
@@ -17,15 +16,7 @@ const PokemonItem: React.FC<PokemonItemProps> = ({ pokemon }) => {
   const [data, setData] = useState<IDataPokemon | null>(null);
 
   useEffect(() => {
-    const fetchPokemonData = async () => {
-      const { data } = await axios.get<IDataPokemon>(
-        `${pokemonUrl()}${pokemon.name}`
-      );
-
-      setData(data);
-    };
-
-    fetchPokemonData();
+    fetchPokemonsName(pokemon.name).then((res) => setData(res));
   }, [dispatch, pokemon.name]);
 
   return (
@@ -37,10 +28,10 @@ const PokemonItem: React.FC<PokemonItemProps> = ({ pokemon }) => {
           <div>
             <div className={style.wrapper_item}>
               <div className={style.wrapper_item_pokemon_bg}>
-                {data.sprites.other.dream_world.front_default && (
+                {data.sprites?.other?.dream_world.front_default && (
                   <Image
                     loading="lazy"
-                    src={data.sprites.other.dream_world.front_default}
+                    src={data.sprites?.other?.dream_world.front_default}
                     width={200}
                     height={200}
                   />
@@ -51,7 +42,7 @@ const PokemonItem: React.FC<PokemonItemProps> = ({ pokemon }) => {
                   {pokemon.name}
                 </h2>
                 <h5 className={style.wrapper_item_profile_number}>
-                  {convertZero(data.id)}
+                  {formatId(data.id)}
                 </h5>
                 <span className={style.wrapper_profile_type}></span>
               </div>

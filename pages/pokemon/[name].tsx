@@ -1,7 +1,12 @@
 import React from "react";
-import Pokemon from "~/containers/pokemonPage/PokemonPage";
+import Pokemon from "~/containers/PokemonPage/PokemonPage";
+import PageLayout from "~/PageLayout/PageLayout";
 
 const PokemonName = () => {
-  return <Pokemon />;
+  return (
+    <PageLayout title="Pokemon" metaDescription="some description">
+      <Pokemon />
+    </PageLayout>
+  );
 };
 export default PokemonName;

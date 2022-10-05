@@ -1,6 +1,6 @@
 import { createSelector } from "@reduxjs/toolkit";
 
-import { COUNT_OF_ITEMS } from "~/constants/globalConst";
+import { COUNT_OF_ITEMS } from "~/constants/countOfItems";
 
 import { RootState } from "..";
 

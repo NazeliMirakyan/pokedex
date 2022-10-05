@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { IInitialState, EStatus } from "..";
-import { SLICE_NAMES } from "../../constants/constants";
+import { IInitialState } from "./types";
+import { ERequestStatus } from "..";
+import { SLICE_NAMES } from "~/constants/stateConstant";
 
 import { fetchPokemonData, fetchPokemons } from "./thunks";
 
@@ -29,17 +30,17 @@ export const dataSlice = createSlice({
 
   extraReducers: (builder) => {
     builder.addCase(fetchPokemons.pending, (state) => {
-      state.status = EStatus.LOADING;
+      state.status = ERequestStatus.LOADING;
       state.error = null;
     });
 
     builder.addCase(fetchPokemons.fulfilled, (state, { payload }) => {
-      state.status = EStatus.RESOLVED;
+      state.status = ERequestStatus.RESOLVED;
       state.pokemons = payload;
     });
 
     builder.addCase(fetchPokemons.rejected, (state) => {
-      state.status = EStatus.REJECTED;
+      state.status = ERequestStatus.REJECTED;
     });
 
     builder.addCase(fetchPokemonData.fulfilled, (state, { payload }) => {

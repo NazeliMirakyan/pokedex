@@ -1,8 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { IDataPokemon } from "~/components/content/type";
+import { IDataPokemon } from "~/components/Content/types";
 import { fetchPokemonsData, fetchPokemonsName } from "~/requests/apiRequests";
 
-import { IResult } from "../../types/apiTypes";
+import { IRequestResult } from "../../types/apiTypes";
 
 export const dataSliceName = {
   pokemons: "pokemons",
@@ -11,15 +11,23 @@ export const dataSliceName = {
 };
 
 export const fetchPokemons = createAsyncThunk<
-  IResult[],
+  IRequestResult[],
   { limit: number; offset: number }
->(dataSliceName.pokemons, async (payload) => {
-  return fetchPokemonsData(payload);
+>(dataSliceName.pokemons, async (payload, { rejectWithValue }) => {
+  try {
+    return fetchPokemonsData(payload);
+  } catch (error) {
+    return rejectWithValue(error);
+  }
 });
 
 export const fetchPokemonData = createAsyncThunk<
   IDataPokemon,
   { name: string }
->(dataSliceName.pokemonData, async ({ name }) => {
-  return fetchPokemonsName(name);
+>(dataSliceName.pokemonData, async ({ name }, { rejectWithValue }) => {
+  try {
+    return fetchPokemonsName(name);
+  } catch (error) {
+    return rejectWithValue(error);
+  }
 });

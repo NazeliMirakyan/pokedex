@@ -8,12 +8,10 @@ const Link = ({
 }: {
   href: string;
   children: React.ReactNode;
-}) => {
-  return (
-    <NextLink href={href}>
-      <a {...props}>{children}</a>
-    </NextLink>
-  );
-};
+}) => (
+  <NextLink href={href}>
+    <a {...props}>{children}</a>
+  </NextLink>
+);
 
 export default Link;

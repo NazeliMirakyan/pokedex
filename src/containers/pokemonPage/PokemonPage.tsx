@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-import Link from "~/helper/PageLinks";
+import Link from "~/components/PageLink/PageLinks";
 import { dataSelectors } from "~/redux";
 import { useAppDispatch, useAppSelector } from "~/hooks";
 import { fetchPokemonData } from "~/redux/data/thunks";
@@ -44,7 +44,7 @@ const Pokemon = () => {
       </div>
       <div className={style.wrapper_container}>
         <div>
-          <Image src={imageURL} width={150} height={250} />
+          {imageURL && <Image src={imageURL} width={150} height={250} />}
         </div>
         <div className={style.wrapper_container_about}>
           <div className={style.wrapper_container_about_items}>

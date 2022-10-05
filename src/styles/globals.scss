@@ -1,4 +1,4 @@
-@import '../styles/vars.module.scss';
+@import "../styles/vars.module.scss";
 
 html,
 body {
@@ -22,8 +22,8 @@ a {
   html {
     color-scheme: dark;
   }
+
   body {
-    
-    background: $sky_blue
+    background: $sky_blue;
   }
 }

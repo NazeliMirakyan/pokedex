@@ -1,26 +1,17 @@
 import { store } from "../redux";
-import { IDataPokemon } from "~/components/content/type";
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
-export enum EStatus {
+export enum ERequestStatus {
   LOADING = "loading",
   RESOLVED = "resolved",
   REJECTED = "rejected",
 }
 
-export interface IData {
+export interface IPokemonItem {
   name: string;
   url: string;
-}
-
-export interface IName {
-  name: string;
-}
-
-export interface ITypes {
-  type: IName;
 }
 
 export interface IFrontDefault {
@@ -34,14 +25,11 @@ export interface IOther {
 export interface ISprites {
   other: IOther;
 }
-export interface IName {
-  name: string;
-  url: string;
-}
 
 export interface IAbilities {
-  ability: IName;
+  ability: IPokemonItem;
 }
+
 export interface IDataAbout {
   abilities: IAbilities[];
   id: number;
@@ -52,37 +40,17 @@ export interface IDataAbout {
   sprites: ISprites;
 }
 
-export interface IInitialState {
-  pokemons: IResult[];
-  pokemonDetails: IDataPokemon | null;
-  limit: number;
-  name: string;
-  status: null | string;
-  error: null;
-  offset: number;
-}
-
-export interface IResult {
-  name: string;
-  url: string;
+export interface IRequestResult extends IPokemonItem {
   value: string;
-}
-
-export interface IPokemonName {
-  name: string;
-  url: string;
-}
-
-export interface IPokemon {
-  pokemon: IPokemonName;
 }
 
 export interface IDataAboutStructure {
   id: number;
   name: string;
-  pokemon: IPokemon[];
+  pokemon: Array<{ pokemon: IPokemonItem }>;
 }
+
 export interface IDataStructure {
   count: number;
-  results: IResult[];
+  results: IRequestResult[];
 }

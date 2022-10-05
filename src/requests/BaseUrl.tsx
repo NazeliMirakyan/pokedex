@@ -1,4 +1,4 @@
-export const pokemonUrl = () => `https://pokeapi.co/api/v2/pokemon/`;
+import { pokemonUrl } from "~/constants/urlConstant";
+import axios from "axios";
 
-export const getallPokemonData = (limit: number, offset: number) =>
-  `${pokemonUrl()}?limit=${limit}&offset=${offset}`;
+export const API = axios.create({ baseURL: pokemonUrl });

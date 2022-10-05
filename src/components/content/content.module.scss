@@ -9,6 +9,7 @@
   margin: 15px 0;
   background-color: $white;
   color: $black;
+
   &_item {
     width: 500px;
     display: flex;
@@ -52,6 +53,7 @@
       }
     }
   }
+
   .pagination {
     display: flex;
     justify-content: center;
@@ -60,16 +62,19 @@
     margin-bottom: 15px;
     font-size: 25px;
     gap: 5px;
+
     &_page_num {
       padding: 8px 15px;
       cursor: pointer;
       border-radius: 3px;
       font-weight: 400;
       transition: ease-in 0.1s;
+
       &:hover {
         background-color: $light_blue;
         color: $white;
       }
+
       &_active {
         padding: 8px 0;
         border-radius: 3px;

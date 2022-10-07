@@ -18,7 +18,7 @@ const Content = () => {
 
   useEffect(() => {
     dispatch(fetchPokemons({ limit, offset }));
-  }, [dispatch]);
+  }, [dispatch, limit, offset]);
 
   const pokemonData = pokemons.map((pokemon) => (
     <div key={pokemon.name}>

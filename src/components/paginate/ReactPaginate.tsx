@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from "~/hooks";
 import { fetchPokemons } from "~/redux/data/thunks";
 import { setOffset } from "~/redux/data/slice";
 
-import style from "../Content/Content.module.scss";
+import style from "./ReactPaginate.module.scss";
 
 const PaginatedItems: React.FC = () => {
   const dispatch = useAppDispatch();

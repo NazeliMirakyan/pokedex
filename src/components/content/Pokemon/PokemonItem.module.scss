@@ -1,0 +1,45 @@
+@import "../../../styles/vars.module.scss";
+
+.wrapper_item {
+  width: 500px;
+  display: flex;
+  padding: 15px 15px;
+  margin-bottom: 60px;
+  margin-top: 55px;
+  border: 1px solid $light_gray;
+  border-radius: 15px;
+
+  &_pokemon_bg {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+    img {
+      width: 220px;
+      margin-top: -75px;
+    }
+  }
+
+  &_profile {
+    padding: 15px 10px;
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: -20px;
+    color: $black !important;
+    &_name {
+      font-size: 35px;
+      color: $yellow;
+      letter-spacing: 1px;
+    }
+
+    &_number {
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+    &_type {
+      margin-left: 15px;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+  }
+}

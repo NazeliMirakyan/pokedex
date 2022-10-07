@@ -6,7 +6,7 @@ import { dataSelectors } from "~/redux";
 import { setLimit } from "~/redux/data/slice";
 import { optionNumbers } from "~/constants/limitConstsnt";
 
-import style from "./limit.module.scss";
+import style from "./Limit.module.scss";
 
 const limitOptions = optionNumbers?.map((numbers, i) => (
   <option key={i} value={numbers} className={style.custom_select_type_option}>

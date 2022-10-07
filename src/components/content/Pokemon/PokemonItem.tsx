@@ -4,11 +4,11 @@ import Image from "next/image";
 import Link from "~/components/PageLink/PageLinks";
 import { useAppDispatch } from "~/hooks";
 import { formatId } from "~/helper/formatId";
+import { fetchPokemonsName } from "~/requests/apiRequests";
 
 import { PokemonItemProps, IDataPokemon } from "../types";
-import style from "../content.module.scss";
+import style from "./PokemonItem.module.scss";
 import Spinner from "../Loader/Spiner/Spiner";
-import { fetchPokemonsName } from "~/requests/apiRequests";
 
 const PokemonItem: React.FC<PokemonItemProps> = ({ pokemon }) => {
   const dispatch = useAppDispatch();

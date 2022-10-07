@@ -1,6 +1,6 @@
-import style from "./logo.module.scss";
-
 import Image from "next/image";
+
+import style from "./Logo.module.scss";
 
 const Logo = () => {
   return (

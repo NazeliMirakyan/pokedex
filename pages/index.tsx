@@ -1,5 +1,4 @@
 import React from "react";
-
 import HomeContainer from "~/containers/HomeContainer/HomeContainer";
 import PageLayout from "~/PageLayout/PageLayout";
 
